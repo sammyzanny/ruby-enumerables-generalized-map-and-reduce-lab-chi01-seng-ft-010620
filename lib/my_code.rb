@@ -9,17 +9,17 @@ def map(array)
   new
 end
 
-def reduce(s, sp=nil)
-  if sp
-    accum = sp
+def reduce(array, sv=nil)
+  if sv
+    sum = sv
     i = 0
   else
-    accum = s[0]
+    sum = s[0]
     i = 1
   end
-  while i < s.length
-    accum = yield(accum, s[i])
+  while i < array.length
+    sum = yield(accum, s[i])
     i += 1
   end
-  accum
+  sum
 end
